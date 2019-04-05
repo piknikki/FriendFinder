@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require("body-parser"); // parse the data in form
 const path = require('path');
+var PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true})) // for getting info from html form
@@ -24,6 +25,6 @@ app.post("/survey", function(req, res) {
 
 
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
     console.log("server is running on port 3000")
 });
